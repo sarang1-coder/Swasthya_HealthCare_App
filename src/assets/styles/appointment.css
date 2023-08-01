@@ -1,0 +1,13 @@
+.appoint-container {
+  padding: 2%;
+  overflow: hidden;
+  width: 100vw;
+  min-height: 90vh;
+  background-color: rgb(188, 188, 234);
+  z-index: 2;
+}
+.input-form{
+    margin: auto;
+    width:30vw;
+    line-height: 30px;
+}

@@ -1,0 +1,87 @@
+.about-container {
+  padding: 2%;
+  overflow: hidden;
+  width: 98vw;
+  min-height: 90vh;
+  background-color: rgb(188, 188, 234);
+  z-index: 1;
+}
+.slider-container {
+  width: 90vw;
+  border-radius: 10px;
+  margin: auto;
+  display: flex;
+  padding: 1%;
+  flex-direction: row;
+  background-image: url('https://assets.delveinsight.com/blog/wp-content/uploads/2022/06/28150129/mainBanner.jpg');
+  background-position: center;
+  position: relative;
+  z-index: inherit;
+}
+.slider-container h1 {
+  width: 60vw;
+  color: wheat;
+}
+.slider-container li {
+  color: wheat;
+}
+.heading {
+  padding: 1%;
+}
+.slider {
+  width:20vw;
+  justify-content: center;
+  align-items: center;
+}
+.slider img{
+  padding: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  width: 90vw;
+}
+.section {
+  margin: 1%;
+}
+.left {
+  width: 70%;
+  padding: 1%;
+  min-height: 50vh;
+}
+.right {
+  width: 30%;
+  border-radius: 10px;
+  background-color: white;
+  min-height: 50vh;
+}
+/* Add this CSS to your existing about.css or create a new CSS file and import it */
+
+.editor-pick-container {
+  display: flex;
+  flex-direction: column;
+  margin:1%;
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+}
+.editor-pick-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.editor-pick-img {
+  width: 200px; /* You can adjust the width as needed */
+  height: auto;
+  margin-right: 15px;
+}
+
+.editor-pick-content {
+  flex: 1;
+}
