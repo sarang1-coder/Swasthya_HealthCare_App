@@ -6,6 +6,10 @@ import InputControl from "./InputForm";
 import { auth } from "../../firebase";
 
 import styles from "../../assets/styles/singin.module.css";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 function Login() {
   const navigate = useNavigate();
@@ -19,7 +23,7 @@ function Login() {
   const handleSubmission = () => {
     if (!values.email || !values.pass) {
       setErrorMsg("Fill all fields");
-      return;
+      return toast.warning("Fill all fields");
     }
     setErrorMsg("");
 
@@ -27,11 +31,12 @@ function Login() {
     signInWithEmailAndPassword(auth, values.email, values.pass)
       .then(async (res) => {
         setSubmitButtonDisabled(false);
-        
+        toast.success("Login Successfully");
         navigate("/");
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
+        toast.error("Invalid ID/Password");
         setErrorMsg(err.message);
       });
   };

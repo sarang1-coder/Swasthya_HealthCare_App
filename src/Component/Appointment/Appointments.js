@@ -4,6 +4,11 @@ import InputControl from "../Auth/InputForm";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../firebase.js";
 import { Link } from "react-router-dom";
+import Payment from "./Payment";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default function Appointment() {
   const [formData, setFormData] = useState({
@@ -11,6 +16,7 @@ export default function Appointment() {
     medicine_info: "",
     ph_no: "15",
     reminder: "00:00", // Set the default reminder time
+    price:"00"
   });
 
   const userCollectionsRef = collection(db, "users");
@@ -31,14 +37,17 @@ export default function Appointment() {
       medicine_info: formData.medicine_info,
       ph_no: Number(formData.ph_no),
       reminder: formData.reminder, // Store the reminder time as a string
+      price:formData.price
     };
     console.log(userData);
-
-    try {
+    
+    try { 
       await addDoc(userCollectionsRef, userData);
       console.log("Data stored in Firestore:", userData);
+      toast.success("Data stored Successfully");
       // You can redirect to a success page here if needed
     } catch (error) {
+       toast.error("Error storing data");
       console.error("Error storing data:", error);
     }
   };
@@ -82,6 +91,14 @@ export default function Appointment() {
             onChange={handleChange}
             name="reminder"
           />
+          <InputControl
+            label="Medicine Price"
+            placeholder="Enter Medicine Price"
+            required
+            value={formData.price}
+            onChange={handleChange}
+            name="price"
+          />
 
           <button type="submit" className="btn btn-warning" style={{ margin: "10px" }}>
             Add Medicine
@@ -90,6 +107,8 @@ export default function Appointment() {
           <Link to="/medicine_list">
             <button className="btn btn-primary">Medicine List</button>
           </Link>
+
+          {/* <Payment/> */}
         </form>
       </div>
     </>

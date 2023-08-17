@@ -2,6 +2,9 @@ import React from "react";
 import Slider from "react-carousel-responsive";
 import "react-carousel-responsive/dist/styles.css";
 import "../../assets/styles/about.css";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+
 
 
 export default function About() {
@@ -26,6 +29,21 @@ const editor_pick={
     text:"Engage in regular physical activity to improve cardiovascular health, build strength, and maintain a healthy weight."
   },
     info3:{
+    img_src:'https://thumbs.dreamstime.com/b/health-tips-button-health-tips-web-button-icon-vector-illustration-isolated-white-background-119479527.jpg',
+    title:"Stay Hydrated",
+    text:"Drink plenty of water throughout the day to keep your body hydrated and to support various bodily functions."
+  },
+      info4:{
+    img_src:'https://thumbs.dreamstime.com/b/health-tips-button-health-tips-web-button-icon-vector-illustration-isolated-white-background-119479527.jpg',
+    title:"Stay Hydrated",
+    text:"Drink plenty of water throughout the day to keep your body hydrated and to support various bodily functions."
+  },
+      info5:{
+    img_src:'https://thumbs.dreamstime.com/b/health-tips-button-health-tips-web-button-icon-vector-illustration-isolated-white-background-119479527.jpg',
+    title:"Stay Hydrated",
+    text:"Drink plenty of water throughout the day to keep your body hydrated and to support various bodily functions."
+  },
+      info6:{
     img_src:'https://thumbs.dreamstime.com/b/health-tips-button-health-tips-web-button-icon-vector-illustration-isolated-white-background-119479527.jpg',
     title:"Stay Hydrated",
     text:"Drink plenty of water throughout the day to keep your body hydrated and to support various bodily functions."
@@ -107,23 +125,25 @@ const editor_pick={
 
 
         </div>
-        <div className="right section">
-          <div className="editor-pick-container">
-            {
-            Object.entries(editor_pick).map(([key, value]) => (
-              <div className="card" key={key}>
-                <img src={value.img_src} className="card-img-top" alt={value.title} style={{width:'30%'}}/>
-                <div className="card-body">
-                  <h5 className="card-title">{value.title}</h5>
-                  <p className="card-text">{value.text}</p>
-                </div>
-              </div>
-            ))
-            }
-        </div>
+        
+    <div className="container mt-5">
+      <div className="row justify-content-center">
+        {Object.entries(editor_pick).map(([key, value]) => (
+          <div className="col-md-4 mb-4" key={key}>
+            <Card>
+              <Card.Img variant="top" src={value.img_src} alt={value.title} style={{ width: '30%', height: 'auto',objectFit:"contain"}} />
+              <Card.Body>
+                <Card.Title>{value.title}</Card.Title>
+                <Card.Text>{value.text}</Card.Text>
+                <Button variant="primary">Go somewhere</Button>
+              </Card.Body>
+            </Card>
+          </div>
+        ))}
+      </div>
+    </div>
 
-            
-        </div>
+
   </div>
 
         

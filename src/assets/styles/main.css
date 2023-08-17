@@ -1,5 +1,6 @@
-.main{
-    background-color: rgb(188, 188, 234);
+.main {
+  background-color: rgb(188, 188, 234);
+  margin-top: 10%;
 }
 .main-container {
   margin-top: 8%;
@@ -10,14 +11,17 @@
   z-index: 1;
 }
 
-img{
-    border-radius: 10px;
-    margin: 1%;
+img {
+  border-radius: 10px;
+  margin: 1%;
 }
-.imgs{
-    display: flex;
-    flex-direction: column;
+.imgs {
+  display: flex;
+  flex-direction: column;
 }
-.basic-info{
-    padding: 1%;
+.basic-info {
+  padding: 1%;
+}
+h1 {
+  font-size: 1rem;
 }

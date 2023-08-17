@@ -8,7 +8,8 @@ import SignUp from "./Component/Auth/SignUp.js";
 import Main from "./Component/Layout/Main.js";
 import Appointment from "./Component/Appointment/Appointments.js";
 import Display from "./Component/Appointment/Display.js";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <>
+        <Router>
       <Routes>
         <Route path="/login" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
@@ -35,6 +37,9 @@ function App() {
         <Route path="/*" element={<ErrorPage />} />
       </Routes>
     </Router>
+    <ToastContainer/>
+    </>
+
   );
 }
 

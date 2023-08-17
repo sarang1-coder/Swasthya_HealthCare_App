@@ -6,6 +6,9 @@ import InputControl from "./InputForm";
 import { auth } from "../../firebase";
 
 import styles from "../../assets/styles/signup.module.css";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -23,6 +26,7 @@ function Signup() {
 
     if (!values.name || !values.email || !values.password) {
       setErrorMsg("Fill all fields");
+      return toast.warning("Fill all fields")
       return;
     }
     setErrorMsg("");
@@ -35,10 +39,12 @@ function Signup() {
         await updateProfile(user, {
           displayName: values.name,
         });
+        toast.success("SignUp Successfully");
         navigate("/login");
       })
       .catch((err) => {
         setSubmitButtonDisabled(false);
+        toast.error("Invalid ID/Password");
         setErrorMsg(err.message);
       });
   };

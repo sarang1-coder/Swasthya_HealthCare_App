@@ -61,17 +61,21 @@ nav .menu {
   display: none;
   position: absolute;
   top: 0.75rem;
-  right: 0.5rem;
+  right: 2rem;
   flex-direction: column;
   justify-content: space-between;
   width: 2.25rem;
   height: 2rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
 }
 
 nav .menu span {
   height: 0.4rem;
+  margin-right: 3rem;
   width: 100%;
-  background-color: #fff;
+  background-color: #080808;
   border-radius: 0.2rem;
 }
 
@@ -114,5 +118,18 @@ nav .menu span {
 
   nav ul li a {
     margin: 0.2rem 0.5rem;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 481px) {
+  h1{
+    font-size: 1rem;
+  }
+  .accordion {
+    display: none;
   }
 }
